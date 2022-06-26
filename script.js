@@ -31,25 +31,15 @@ document.addEventListener('keydown', function (e) {
     }
 })
 
-//////////////////////////////////////
-///////////    Cookie   //////////////
-//////////////////////////////////////
+//////////////////////////////////////////
+/////////   Smooth Scrolling    //////////
+//////////////////////////////////////////
 
-const header = document.querySelector('.header')
+const btnScrollTo = document.querySelector('.btn--scroll-to')
+const section1 = document.querySelector('#section--1')
 
-// Creating and inserting elements
-const message = document.createElement('div')
-message.classList.add('cookie-message')
+btnScrollTo.addEventListener('click', function (e) {
+    // Modern Way of Smooth Scrolling
+    section1.scrollIntoView({ behavior: 'smooth'})
+})
 
-message.innerHTML =
-    'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>'
-
-header.append(message)
-
-// Delete Element
-document
-    .querySelector('.btn--close-cookie')
-    .addEventListener('click', function () {
-        message.remove()
-        // message.parentElement.removeChild(message)
-    })
